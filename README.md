@@ -21,3 +21,6 @@
 # Testing
 # Authors
 Sophie Cosgrove
+
+# License
+(LICENSE)
