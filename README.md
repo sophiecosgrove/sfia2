@@ -23,4 +23,4 @@
 Sophie Cosgrove
 
 # License
-(LICENSE)
+(https://github.com/sophiecosgrove/sfia2/blob/master/LICENSE)
