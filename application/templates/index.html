@@ -1,21 +1,24 @@
+{% extends 'layout.html' %}
+{% block body_content %}
 <!DOCTYPE html>
     <html>
         <head>
             <title>
-                Random Sentence Generator
+                Random Code Generator
             </title>
         </head>
         <body>
             <h1>
-                Random Sentence Generator Website
+                
             </h1>
 
             <p>
-                {{ sentence }}
+                {{ code }}
             </p>
 
             <button onclick="window.location.reload();">
-                Generate Sentence
+                Generate code
             </button>
         </body>
     </html>    
+{% endblock %}
