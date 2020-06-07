@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>
+                Fortune Generator
+            </title>
+        </head>
+        <body>
+            <h1>
+                
+            </h1>
+
+            <p>
+                {{ sentence }}
+            </p>
+
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" onclick="window.location.reload();">Generate Fortune</a>
+            <a href="https://www.vecteezy.com/free-vector/future"><img src='https://static.vecteezy.com/system/resources/previews/000/186/990/original/fortune-teller-illustration-vector.jpg' alt='fortune teller'/>Future Vectors by Vecteezy</a>
+        </body>
+    </html>    
+{% endblock %}
