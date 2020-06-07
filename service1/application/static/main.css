@@ -1,5 +1,5 @@
 body {
-  background: #fafafa;
+  background: #e4f3ba;
   color: #333333;
   margin-top: 5rem;
 }
@@ -9,11 +9,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #011625;
+  background-color: #107466;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: #cbd5db;
+  color: #dbd1cb;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -27,13 +27,13 @@ h1, h2, h3, h4, h5, h6 {
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
+  border: 1px solid #e4dd9f;
   border-radius: 3px;
   margin-bottom: 20px;
 }
 
 .article-title {
-  color: #444444;
+  color: #7e537c;
 }
 
 a.article-title:hover {
@@ -48,7 +48,8 @@ a.article-title:hover {
 .article-metadata {
   padding-bottom: 1px;
   margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3
+  border-bottom: 1px solid #e4dd9f
+
 }
 
 .article-metadata a:hover {

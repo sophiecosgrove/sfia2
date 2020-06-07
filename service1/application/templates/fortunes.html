@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+<h1>Fortunes Told</h1>
+
+		{% for fortune in fortunes %}
+		<article class="media content-section">
+	          <div class="media-body">
+                     <div class="article-metadata">
+                       <small class="text-muted">Fortune ID:{{ fortune.id }}</small>
+                     </div>
+		             <p>Fortune: {{ fortune.fortune }}</p>
+		      </div>
+        </article>
+		{% endfor %}
+
+{% endblock %}
