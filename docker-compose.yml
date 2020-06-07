@@ -16,6 +16,9 @@ services:
       published: 5000
     networks:
       - ingress
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      SECRET_KEY: ${SECRET_KEY}
   service2:
     image: sophiec0s/service2:latest
     ports: 
@@ -37,6 +40,21 @@ services:
       published: 5003
     networks:
       - ingress
+  mysql:
+    image: mysql:5.7
+    ports: 
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    volumes:
+    - type: volume
+      source: dbvolume
+      target: /var/lib/mysql
+    environment:
+      MYSQL_DATABASE: sfia2
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+volumes:
+  dbvolume:
 networks:
   ingress:
     driver: overlay

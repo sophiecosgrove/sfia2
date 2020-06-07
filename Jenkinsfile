@@ -6,14 +6,14 @@ pipeline{
                 sh 'chmod +x ./script/*'
             }
         }
-        stage("Source variables"){
+        stage("Source bash variables"){
             steps{
-                sh '
+                sh './script/sourcebash.sh'
             }
         }
         stage("Deploy Docker Swarm Stack"){
             steps{
-                sh './script/docker.sh'
+                sh './script/swarmstack.sh'
             }
         }
     }
