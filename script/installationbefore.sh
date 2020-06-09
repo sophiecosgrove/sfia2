@@ -9,6 +9,6 @@ sudo touch ~/.bashrc
 sudo echo 'PATH=$PATH:~/.local/bin' > ~/.bashrc
 
 sudo chown -R $(whoami):$(whoami) ~/*
-sudo source ~/.bashrc
+source ~/.bashrc
 
-sudo pip3 install --user ansible
+pip3 install --user ansible
