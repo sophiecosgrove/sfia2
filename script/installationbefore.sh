@@ -13,4 +13,4 @@ sudo source ~/.bashrc
 
 sudo pip3 install --user ansible
 
-sudo ansible --version
+ansible --version
