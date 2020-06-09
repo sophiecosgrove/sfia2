@@ -1,20 +1,21 @@
 pipeline{
     agent any
     stages{
-        stage("Make scripts executable"){
-            steps{
-                sh 'chmod +x ./script/*'
+
+            stage('Dependencies'){
+                steps{
+                    sh 'chmod +x ./script/*'
+                    sh 'bash ./script/installationbefore.sh'
+                    sh './script/ansible.sh'
+                }
             }
-        }
-        stage("Source bash variables"){
-            steps{
-                sh './script/sourcebash.sh'
+
+            stage('Deploying Docker Stack'){
+                steps{
+                    sh 'chmod +x ./script/*'
+                    sh './script/swarmstack.sh'
+                }
             }
-        }
-        stage("Deploy Docker Swarm Stack"){
-            steps{
-                sh './script/swarmstack.sh'
-            }
-        }
+
     }
 }
