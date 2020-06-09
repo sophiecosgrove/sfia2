@@ -2,7 +2,7 @@ from application import db
 
 class Fortunes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    fortune = db.Column(db.String(50), nullable=False)
+    fortune = db.Column(db.String(100), nullable=False)
 
 
     def __repr__(self):

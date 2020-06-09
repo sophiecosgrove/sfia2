@@ -1,6 +1,17 @@
 ---
-- hosts: web
+- hosts: all
   become: true
   roles:
     - docker
     - nginx
+- name: initialize docker swarm
+  become: true
+  hosts: localhost
+  roles:
+    - docker-swarm-init
+  
+- name: add workers to the swarm
+  become: true 
+  hosts: workers
+  roles:
+    - docker-swarm-add-worker
