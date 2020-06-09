@@ -1,5 +1,4 @@
 #!/bin/bash
-
-sudo source ~/.bashrc
-sudo source ~/.ssh/config
+source ~/.bashrc
+source ~/.ssh/config
 ansible-playbook -i inventory.cfg playbook.yml
