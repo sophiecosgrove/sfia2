@@ -11,6 +11,6 @@ echo 'PATH=$PATH:~/.local/bin' > ~/.bashrc
 sudo chown -R $(whoami):$(whoami) ~/*
 source ~/.bashrc
 
-pip install --user ansible
+pip3 install --user ansible
 
 ansible --version
