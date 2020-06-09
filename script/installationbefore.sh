@@ -12,5 +12,3 @@ sudo chown -R $(whoami):$(whoami) ~/*
 sudo source ~/.bashrc
 
 sudo pip3 install --user ansible
-
-ansible --version
