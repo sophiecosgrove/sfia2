@@ -25,6 +25,8 @@ Sophie Cosgrove
 # Bugs and Fixes
 * 05/06/20 Website not displaying using docker-compose - I had to clear my docker images and containers up as I had a lot of items saved and Docker didn't have enough space to work.
 * 09/06/20 Website not displaying using docker swarm stack - Firstly I changed the location of my database so that it was not a container and running on my IP on port 3306. Instead I set it up in GCP as an instance, allowing connections from the worker nodes as well as the manager-node. I also had to change the firewall rules for the VMs to make sure they had access to all parts of the application. 
+
+# SSH
 # License
 MIT License
 
