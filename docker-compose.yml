@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   nginx:
-    image: nginx:latest
+    image: sophiec0s/nginx:latest
     ports:
     - target: 80
       published: 80
@@ -15,28 +15,31 @@ services:
     - target: 5000
       published: 5000
     networks:
-      - ingress
+    - ingress
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      SECRET_KEY: ${SECRET_KEY}
   service2:
     image: sophiec0s/service2:latest
     ports: 
     - target: 5001
       published: 5001
     networks:
-      - ingress
+    - ingress
   service3:
     image: sophiec0s/service3:latest
     ports: 
     - target: 5002
       published: 5002
     networks:
-      - ingress
+    - ingress
   service4:
     image: sophiec0s/service4:latest
     ports: 
     - target: 5003
       published: 5003
     networks:
-      - ingress
+    - ingress
 networks:
   ingress:
     driver: overlay
