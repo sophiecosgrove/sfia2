@@ -4,7 +4,13 @@ import random
 
 @app.route('/randomphrase', methods=['GET'])
 def phrase():
-
-	list = ['you will meet your soul mate','you will recieve great news','you will travel to Europe','you will recieve bad news','a door will close and another one will open','your prayers will be answered','a person from your past will return']
-	
-	return list[random.randrange(6)]
+    number = random.randint(0,2)
+    if number == 1 or number == 0:
+        good = ['you will meet your soul mate','a close friend will turn into a lover', 'an important person will step into your life'
+        , 'you will gain a lifelong friend', 'a long-lost relative will return', 'a long-lost friend will return',
+        'you will recieve great news','you will travel to Europe','a door will close and another one will open', 'your prayers will be answered']
+        return good[random.randrange(10)]
+    elif number ==2:
+        bad = ['you will recieve bad news','you will face your worst fear', 'you will face great uncertainty',
+        'an unwelcome change will occur', 'you will encounter your biggest challenge yet',]
+        return bad[random.randrange(5)]
