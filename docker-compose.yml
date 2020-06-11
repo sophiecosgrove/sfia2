@@ -17,7 +17,7 @@ services:
     networks:
     - ingress
     env_file:
-    - ~/.bashrc
+    - .bashrc
     environment:
     - DATABASE_URI=${DATABASE_URI}
     - TEST_DB_URI=${TEST_DB_URI}
