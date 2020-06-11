@@ -11,6 +11,9 @@ pipeline{
             }
 
             stage('Deploying Docker Stack'){
+                environment{
+                    DATABASE_URI="${DATABASE_URI}"
+                }
                 steps{
                     sh 'chmod +x ./script/*'
                     sh './script/swarmstack.sh'
