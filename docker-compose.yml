@@ -16,8 +16,6 @@ services:
       published: 5000
     networks:
     - ingress
-    env_file:
-    - .bashrc
     environment:
     - DATABASE_URI=${DATABASE_URI}
     - TEST_DB_URI=${TEST_DB_URI}
