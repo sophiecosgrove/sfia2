@@ -17,8 +17,8 @@ services:
     networks:
     - ingress
     environment:
-      DATABASE_URI: ${DATABASE_URI}
-      TEST_DB_URI: ${TEST_DB_URI}
+      - DATABASE_URI: ${DATABASE_URI}
+      - TEST_DB_URI: ${TEST_DB_URI}
     deploy:
       replicas: 3
   service2:
