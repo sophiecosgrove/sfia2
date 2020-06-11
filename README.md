@@ -25,6 +25,8 @@ Sophie Cosgrove
 # Bugs and Fixes
 * 05/06/20 Website not displaying using docker-compose - I had to clear my docker images and containers up as I had a lot of items saved and Docker didn't have enough space to work.
 * 09/06/20 Website not displaying using docker swarm stack - Firstly I changed the location of my database so that it was not a container and running on my IP on port 3306. Instead I set it up in GCP as an instance, allowing connections from the worker nodes as well as the manager-node. I also had to change the firewall rules for the VMs to make sure they had access to all parts of the application. 
+* 11/06/20 Nginx not running - I hadn't added it to the ingress network which all the other containers were under. I also changed the version to stable.
+* 11/06/20 Jenkins not exporting the database connections - 
 # License
 MIT License
 
