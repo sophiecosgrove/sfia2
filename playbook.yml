@@ -4,12 +4,10 @@
   become: true
   roles:
     - docker
-    - nginx
 - hosts: workers
   become: true
   roles:
     - docker
-    - nginx
 - name: initialize docker swarm
   become: true
   hosts: 127.0.0.1

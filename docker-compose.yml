@@ -5,10 +5,6 @@ services:
     ports:
     - target: 80
       published: 80
-    volumes:
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.conf
   service1:
     image: sophiec0s/service1:latest
     ports: 

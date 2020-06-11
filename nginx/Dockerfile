@@ -1,5 +1,5 @@
 FROM nginx
 
-RUN rm /etc/nginx/conf.d/default.conf
+WORKDIR /etc/nginx/
 
-COPY nginx.conf /etc/nginx.conf.d 
+COPY ./reverse_proxy.conf ./conf.d/

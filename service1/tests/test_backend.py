@@ -1,4 +1,8 @@
 import unittest
+from unittest.mock import Mock
+from unittest.mock import patch
+import requests
+
 from flask import url_for
 from flask_testing import TestCase
 
@@ -21,19 +25,24 @@ class TestBase(TestCase):
         db.drop_all()
         db.create_all()
 
-        fortune = Fortunes(fortune='In the next week you will recieve some good news')
-
+        fortune = Fortunes(fortune = 'Next month you will recieve some good news')
 
 
         db.session.add(fortune)
         db.session.commit()
 
-
     def tearDown(self):
         db.session.remove()
         db.drop_all()
 
-class TestViews(TestBase):
-    def test_home_view(self):
-        response = self.client.get(url_for('home'))
-        self.assertEqual(response.status_code, 200)
+class TestModels(TestBase):
+    def test_repr(self):
+        fortune = Fortunes(fortune = 'Next month you will recieve some good news')
+        print(repr(fortune))
+
+class TestRoutes(TestBase):
+    def test_home(self):
+        with patch.object(requests, 'get') as get_mock:
+            get_mock.return_value = mock_response = Mock()
+            mock_response.status_code = 200
+            assert get_mock() == 200
