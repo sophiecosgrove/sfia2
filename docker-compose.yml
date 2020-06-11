@@ -14,7 +14,7 @@ services:
     - ingress
     environment:
       DATABASE_URI: ${DATABASE_URI}
-      SECRET_KEY: ${SECRET_KEY}
+      TEST_DB_URI: ${TEST_DB_URI}
   service2:
     image: sophiec0s/service2:latest
     ports: 
