@@ -7,6 +7,8 @@ services:
       published: 80
     networks:
     - ingress
+    deploy:
+      replicas: 3
   service1:
     image: sophiec0s/service1:latest
     ports: 
@@ -17,6 +19,8 @@ services:
     environment:
       DATABASE_URI: ${DATABASE_URI}
       TEST_DB_URI: ${TEST_DB_URI}
+    deploy:
+      replicas: 3
   service2:
     image: sophiec0s/service2:latest
     ports: 
@@ -24,6 +28,8 @@ services:
       published: 5001
     networks:
     - ingress
+    deploy: 
+      replicas: 1
   service3:
     image: sophiec0s/service3:latest
     ports: 
@@ -31,6 +37,8 @@ services:
       published: 5002
     networks:
     - ingress
+    deploy:
+      replicas: 1
   service4:
     image: sophiec0s/service4:latest
     ports: 
@@ -38,6 +46,8 @@ services:
       published: 5003
     networks:
     - ingress
+    deploy:
+      replicas: 3
 networks:
   ingress:
     driver: overlay
