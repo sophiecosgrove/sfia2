@@ -5,6 +5,8 @@ services:
     ports:
     - target: 80
       published: 80
+    networks:
+    - ingress
   service1:
     image: sophiec0s/service1:latest
     ports: 
