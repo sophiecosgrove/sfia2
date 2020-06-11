@@ -15,6 +15,7 @@ pipeline{
                     DATABASE_URI="${DATABASE_URI}"
                 }
                 steps{
+                    sh 'export DATABASE_URI'
                     sh 'chmod +x ./script/*'
                     sh './script/swarmstack.sh'
                 }
