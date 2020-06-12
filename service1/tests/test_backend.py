@@ -14,7 +14,6 @@ class TestBase(TestCase):
     def create_app(self):
         config_name = 'testing'
         app.config.update(SQLALCHEMY_DATABASE_URI=getenv('TEST_DB_URI'),
-            SECRET_KEY=getenv('TEST_SECRET_KEY'),
             WTF_CSRF_ENABLED=False,
             DEBUG=True
             )
@@ -42,6 +41,7 @@ class TestModels(TestBase):
 
 class TestRoutes(TestBase):
     def test_home(self):
+        @mock.patch('application.routes.home')
         with patch.object(requests, 'get') as get_mock:
             get_mock.return_value = mock_response = Mock()
             mock_response.status_code = 200

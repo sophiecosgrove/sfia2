@@ -8,15 +8,16 @@
             </title>
         </head>
         <body>
-            <h1>
-                
-            </h1>
-
+            <article class="media content-section">
+                <div>
+               
+       
+                   <h3>{{ sentence }}</h3>
+                </div>
+            </article>
             <p>
-                {{ sentence }}
-            </p>
-
             <a class="btn btn-secondary btn-sm mt-1 mb-1" onclick="window.location.reload();">Generate Fortune</a>
+            </p>
             <img src={{ url_for('static', filename='fortune-teller-illustration-vector.jpg') }} alt='fortune teller'width='810' height='540'/>
         </body>
     </html>    

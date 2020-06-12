@@ -12,6 +12,7 @@ pipeline{
 
             stage('Deploying Docker Stack'){
                 steps{
+
                     sh 'chmod +x ./script/*'
                     sh './script/swarmstack.sh'
                 }
