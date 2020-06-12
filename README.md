@@ -17,11 +17,18 @@
 * Containerisation: Docker
 * Orchestration Tool: Docker Swarm
 # Designs
+## Use Case
+![imageofusecase](https://github.com/sophiecosgrove/sfia2/blob/development/usecase.png)
+## User Stories
+![imageofuserstories](https://github.com/sophiecosgrove/sfia2/blob/development/userstories.png)
 # Deployment
 ## CI Pipeline
 ![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/CIPipeline.png)
 # Risk Assessment
+![imageofinitialriskassessment](https://github.com/sophiecosgrove/sfia2/blob/development/initialriskassessment.png)
 # Testing
+![imageofservice2covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/service2covdiagram.png)
+![imageofservice3covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/service3covdiagram.png)
 
 # Bugs and Fixes
 * 05/06/20 Website not displaying using docker-compose - I had to clear my docker images and containers up as I had a lot of items saved and Docker didn't have enough space to work. Commands I used for this were: docker stop $(docker ps -q), docker rm $(docker ps -aq), docker rmi $(docker images -q), docker system prune.
