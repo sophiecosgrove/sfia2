@@ -16,11 +16,10 @@
 * Cloud server: GCP virtual machines
 * Containerisation: Docker
 * Orchestration Tool: Docker Swarm
-
+# Designs
+# Deployment
 # Risk Assessment
 # Testing
-# Authors
-Sophie Cosgrove
 
 # Bugs and Fixes
 * 05/06/20 Website not displaying using docker-compose - I had to clear my docker images and containers up as I had a lot of items saved and Docker didn't have enough space to work. Commands I used for this were: docker stop $(docker ps -q), docker rm $(docker ps -aq), docker rmi $(docker images -q), docker system prune.
@@ -30,6 +29,8 @@ Sophie Cosgrove
 * 11/06/20 Environment variables not exporting through Jenkins - added this line to the code so that the environment variables were included in the docker stack deploy command. env DATABASE_URI="${DATABASE_URI}" env TEST_DB_URI="${TEST_DB_URI} docker stack deploy --compose-file docker-compose.yml sfia2stack
 
 # SSH
+# Authors
+Sophie Cosgrove
 # License
 MIT License
 
