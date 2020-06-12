@@ -18,6 +18,8 @@
 * Orchestration Tool: Docker Swarm
 # Designs
 # Deployment
+## CI Pipeline
+![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/CIPipeline.png)
 # Risk Assessment
 # Testing
 
