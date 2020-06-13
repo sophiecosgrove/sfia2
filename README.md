@@ -18,24 +18,30 @@
 * Orchestration Tool: Docker Swarm
 # Designs
 ## Use Case
-![imageofusecase](https://github.com/sophiecosgrove/sfia2/blob/development/usecase.png)
+![imageofusecase](https://github.com/sophiecosgrove/sfia2/blob/development/images/usecase.png)
 ## User Stories
-![imageofuserstories](https://github.com/sophiecosgrove/sfia2/blob/development/userstories.png)
+![imageofuserstories](https://github.com/sophiecosgrove/sfia2/blob/development/images/userstories.png)
+## ERD
+![imageoferd](https://github.com/sophiecosgrove/sfia2/blob/development/images/erd.png)
 # Deployment
 ## CI Pipeline
-![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/CIPipeline.png)
+![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/images/CIPipeline.png)
 * In the development stage, I create 4 microservice APIs using Flask and Python for the back end and Bootstrap CSS and HTML for the front end. Service 1 provided the user interface with the app, hosting a website with two pages, home and fortunes. When the home page is refreshed or the 'generate fortune' button is selected by the user, the home route sends a request to service 4 to receive some data. Service 4 then requests a random time response from service 2 and a random fortune response from service 3. Service 4 then puts these two text responses together and returns it to service 1, where it is finally turned into text, entered into the MySQL database and displayed for the user on the home page and also in a list on the fortunes page. During this stage I tested the app by manually deploying it through docker-compose and then transitioning onto the use of docker stack deploy once I had set up my worker nodes. The app was hosted on port 80 through the use of a reverse-proxy using NGINX. This meant that traffic was redirected from port 80 to the app on port 5000. I also tested the app during this stage. Firstly testing the python logic of the routes on a separate python document and then finally utilising Unittest and Mocking to test the rest of the app and its connections.  
 * The VCS service user was GitHub and I utilised a Webhook so that whenever new code was pushed to github, it would trigger Jenkins to build a pipeline. In this pipeline I automated the use of Ansible, which installed Docker on each of the VMs and also set up the Docker Swarm. Finally I automated the builds of the Docker images through Jenkins and then deployed the service stack across the swarm.
 
 # Risk Assessment
-![imageofinitialriskassessment](https://github.com/sophiecosgrove/sfia2/blob/development/initialriskassessment.png)
+![imageofinitialriskassessment](https://github.com/sophiecosgrove/sfia2/blob/development/images/initialriskassessment.png)
 # Testing
 ## Service 2
-![imageofservice2covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/service2covdiagram.png)
+![imageofservice2covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/images/service2covdiagram.png)
 * Due to the random feature in the route, each time the test was run it would only go through half of the code. This is represented in the stage 1 test coverage where with one test to get the url for the route and return the response code of 200, the coverage was at 92%. In order to get to 100% test coverage, I utilised 'with self.client' and ran the test for the route 3 times. This way the same test would run atleast once through each if statement and all lines of code would be tested.
 ## Service 3
-![imageofservice3covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/service3covdiagram.png)
-* As service 3 is structured very similarly to service 2, I adopted the same method for testing. With one test to get the route, the coverage was at 77%, I believe this is because in this specific instance the test initiated the if statement with the lesser code between the two. This time I added three more tests because the odds for the if statements were 2:1, with the positive fortunes being favoured. Therefore it was necessary to run the tests 4 times in total to make sure that the negative if statement was triggered at least once, with the positive if statement almost certainly being triggered. This got the test coverage up to 100%. 
+![imageofservice3covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/images/service3covdiagram.png)
+* As service 3 is structured very similarly to service 2, I adopted the same method for testing. With one test to get the route, the coverage was at 77%, I believe this is because in this specific instance the test initiated the if statement with the lesser code between the two. This time I added three more tests because the odds for the if statements were 2:1, with the positive fortunes being favoured. Therefore it was necessary to run the tests 4 times in total to make sure that the negative if statement was triggered at least once, with the positive if statement almost certainly being triggered. This got the test coverage up to 100%.
+## Service 1
+![imageofservice1covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/images/service1covdiagram.png)
+## Service 4 
+![imageofservice4covdiagram](https://github.com/sophiecosgrove/sfia2/blob/development/images/service4-100.png)
 
 # Bugs and Fixes
 * 05/06/20 Website not displaying using docker-compose - I had to clear my docker images and containers up as I had a lot of items saved and Docker didn't have enough space to work. Commands I used for this were: docker stop $(docker ps -q), docker rm $(docker ps -aq), docker rmi $(docker images -q), docker system prune.
