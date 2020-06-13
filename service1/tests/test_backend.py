@@ -39,10 +39,18 @@ class TestModels(TestBase):
         fortune = Fortunes(fortune = 'Next month you will recieve some good news')
         print(repr(fortune))
 
+class FakeResponse(object):
+    status_code = 200
+    text = 'In the next few weeks you will recieve some good news'
+
 class TestRoutes(TestBase):
     def test_home(self):
-        @mock.patch('application.routes.home')
-        with patch.object(requests, 'get') as get_mock:
-            get_mock.return_value = mock_response = Mock()
-            mock_response.status_code = 200
-            assert get_mock() == 200
+        with patch('requests.get') as mock_request:
+            fake_response = FakeResponse()
+            mock_request.return_value = fake_response
+            response = self.client.get(url_for('home'))
+            self.assertIn(b'In the next few weeks you will recieve some good news', response.data)
+    
+    def test_fortunes(self):
+        response = self.client.get(url_for('fortunes'))
+        self.assertIn(b'Next month you will recieve some good news', response.data)

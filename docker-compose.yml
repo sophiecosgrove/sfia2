@@ -29,7 +29,7 @@ services:
     networks:
     - ingress
     deploy: 
-      replicas: 1
+      replicas: 3
   service3:
     image: sophiec0s/service3:latest
     ports: 
@@ -38,7 +38,7 @@ services:
     networks:
     - ingress
     deploy:
-      replicas: 1
+      replicas: 3
   service4:
     image: sophiec0s/service4:latest
     ports: 

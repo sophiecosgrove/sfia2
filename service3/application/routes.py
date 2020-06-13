@@ -12,5 +12,5 @@ def phrase():
         return fortune[random.randrange(10)]
     elif number ==2:
         fortune = ['you will recieve bad news','you will face your worst fear', 'you will face great uncertainty',
-        'an unwelcome change will occur', 'you will encounter your biggest challenge yet',]
+        'an unwelcome change will occur', 'you will encounter your biggest challenge yet']
         return fortune[random.randrange(5)]

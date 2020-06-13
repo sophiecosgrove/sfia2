@@ -20,5 +20,5 @@ class TestViews(TestBase):
             self.assertEqual(response.status_code, 200)
         with self.client:
             response = self.client.get(url_for('time'))
-            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.status_code, 200) 
         
