@@ -1,0 +1,5 @@
+/pycache/
+*.pyc
+/.cache/
+/.pytest_cache/
+service3/.coverage
