@@ -29,6 +29,12 @@
 * Initially both the time and phrase functions just returned a random selection from a single list, however, I wanted to add more variability in the selection of the fortune. I considered implementing a 2D list, with two random numbers being generated to select the position of the fortune in the list, but finally I decided on having two different lists. First a number is generated to select which list to choose from and then a second number is generated to select which string to return. Doing it this way allowed me to account for the different lengths of the lists and also manipulate the odds of the selection. For example, the chances of getting a good fortune compared to a bad fortune is 2:1 due to there being two possible numbers selected from the given range that correspond to the good fortune list and only one for the bad fortune list.
 ## MySQL
 * Initially I had set up a database as a docker container from the first VMs IP address on port 3306. However, after a bit of troubleshooting I decided to instead have it as an instance on GCP. I felt like this was more easily accessible as multiple VMs would need to be accessing it when the containers were hosted across the swarm. 
+
+# Project Tracking
+## Trello 
+![imageoftrello1](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint1.png)
+![imageoftrello2](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint2.png)
+![imageoftrello3](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint3.png)
 # Deployment
 ## CI Pipeline
 ![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/images/CIPipeline.png)
@@ -74,6 +80,8 @@
 * 10/06/20 Nginx not running, replicas 0/1 - changed the version to stable and added it to the same ingress network as the other containers.
 * 11/06/20 Environment variables not exporting through Jenkins - added this line to the code so that the environment variables were included in the docker stack deploy command. env DATABASE_URI="${DATABASE_URI}" env TEST_DB_URI="${TEST_DB_URI} docker stack deploy --compose-file docker-compose.yml sfia2stack
 
+# Future Improvements
+# Acceptance Criteria
 # Authors
 Sophie Cosgrove
 # License
