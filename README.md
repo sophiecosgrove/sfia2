@@ -89,7 +89,7 @@
 
 # Future Improvements
 ## Fortune Aspect
-* As mentioned above, I believe that the user experience of the app could be improved by providing more specific fortunes and involving an interactive element. I would like to add comment and like functionality as this would provide elaboration on the fortunes recieved and some detail on if they were accurate to the individual. In addition, a customised fortune generation including forms to personalise the fortune or involving the time of access in the time aspect of the fortune would make the user experience more meaninful. Nonetheless, I do appreciate the simplicity of the app as it provides a simple and fast response. 
+* As mentioned above, I believe that the user experience of the app could be improved by providing more specific fortunes and involving an interactive element. I would like to add comment and like functionality as this would provide elaboration on the fortunes recieved and some detail on whether they were accurate to the individual. In addition, a customised fortune generation including forms to personalise the fortune or involving the time of access in the time aspect of the fortune would make the user experience more meaningful. Nonetheless, I do appreciate the simplicity of the app as it provides a simple and fast response. 
 ## Testing
 * I would have liked to implement another form of testing in my app such as selenium to test the front end including links and buttons. In addition, the mock testing does not test the apps integration and functionality in a real-life environment. Despite this, I am happy with my less formal practice of the app's working functionality by running it and checking the website works as well as observing the container logs and service list. 
 # Acceptance Criteria
@@ -103,7 +103,7 @@
 * Should have - best practices
 * Could have - a nice front-end website
 * Won't have - a complex website
-* I feel I have met my must have, should have and could have criteria which ensure the functionability and quality of the project. The won't have criteria is an area that I have discussed above in my risk assessment and future improvements so I am happy that this criteria although not achieved currently, could be achieved in the future.
+* I feel I have met my must have, should have and could have criteria which ensure the functionability and quality of the project. The won't have criteria is an area that I have discussed above in my risk assessment and future improvements so I am happy that this criteria, although not achieved currently, could be achieved in the future.
 # Authors
 Sophie Cosgrove
 # License
