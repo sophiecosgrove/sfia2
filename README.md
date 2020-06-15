@@ -16,6 +16,10 @@
 * Cloud server: GCP virtual machines
 * Containerisation: Docker
 * Orchestration Tool: Docker Swarm
+# Docker
+* Docker containers allow for easy packing, deploying and management of applications in a clean environment. Containers allow you to package up an app with everything it needs so that any other Linux user can download and distribute it easily. This ensures consistency in development, build, test, and production environments and promotes security as containers are completely segregated from one another. Docker also allows you to version control your images, including rollbacks if you encounter an error with the image. It reduces deployment times as a container images do not require an OS to be booted up. They are compatible with Google Cloud Services which is what I used to host my VMs and database. Storing the service images on Dockerhub means that they can be downloaded and utilised anywhere and by anyone which in a real-life setting would reduce the time taken to download and deploy the services whilst ensuring efficiency.
+# Ansible
+* Ansible is an automation tool that allows you to provision your machines with the set-up they need to run the software. It also assists in deployment and orchestration of software. 
 # Designs
 ## Use Case
 ![imageofusecase](https://github.com/sophiecosgrove/sfia2/blob/development/images/usecase.png)
@@ -32,6 +36,7 @@
 
 # Project Tracking
 ## Trello 
+* I used a trello board to track my project and organise my workload. 
 ![imageoftrello1](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint1.png)
 ![imageoftrello2](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint2.png)
 ![imageoftrello3](https://github.com/sophiecosgrove/sfia2/blob/development/images/sfia2sprint3.png)
@@ -40,6 +45,8 @@
 ![imageofcipipeline](https://github.com/sophiecosgrove/sfia2/blob/development/images/CIPipeline.png)
 * In the development stage, I created 4 microservice APIs using Flask and Python for the back end and Bootstrap CSS and HTML for the front end. Service 1 provided the user interface of the app, hosting a website with two pages, home and fortunes. When the home page is refreshed or the 'generate fortune' button is selected by the user, the home route sends a get request to service 4 to receive some data. Service 4 then requests a random time response from service 2 and a random fortune response from service 3. Service 4 then puts these two text responses together and returns it to service 1, where it is finally turned into text, entered into the MySQL database and displayed for the user on the home page and also in a list on the fortunes page. During this stage I tested the app by manually deploying it through docker-compose and then transitioning onto the use of docker stack deploy once I had set up my worker nodes. The app was hosted on port 80 through the use of a reverse-proxy using NGINX. This meant that traffic was redirected from port 80 to the app on port 5000. I also tested the app during this stage. Firstly testing the python logic of the routes on a separate python document and then finally utilising Unittest and Mocking to test the rest of the app and its connections.  
 * The VCS service used was GitHub and I utilised a Webhook so that whenever new code was pushed to the development branch, it would trigger Jenkins to build a pipeline. In this pipeline I automated the use of Ansible, which installed Docker on each of the VMs and also set up the Docker Swarm. Finally I automated the builds of the Docker images through Jenkins and then deployed the service stack across the swarm.
+![imageofjenkinspipeline](https://github.com/sophiecosgrove/sfia2/blob/development/images/Jenkins.png)
+* As demonstrated I have conducted an extensive amount of builds which were triggered after each commit made to github. 
 * When I was having problems with my database URIs not exporting across Jenkins, I made use of the replay function which allows you to alter the Jenkins File within Jenkins to re-test the pipeline. This was helpful because it meant I did not have to go through github and made the problem solving much quicker.
 
 # Risk Assessment
@@ -81,7 +88,22 @@
 * 11/06/20 Environment variables not exporting through Jenkins - added this line to the code so that the environment variables were included in the docker stack deploy command. env DATABASE_URI="${DATABASE_URI}" env TEST_DB_URI="${TEST_DB_URI} docker stack deploy --compose-file docker-compose.yml sfia2stack
 
 # Future Improvements
+## Fortune Aspect
+* As mentioned above, I believe that the user experience of the app could be improved by providing more specific fortunes and involving an interactive element. I would like to add comment and like functionality as this would provide elaboration on the fortunes recieved and some detail on if they were accurate to the individual. In addition, a customised fortune generation including forms to personalise the fortune or involving the time of access in the time aspect of the fortune would make the user experience more meaninful. Nonetheless, I do appreciate the simplicity of the app as it provides a simple and fast response. 
+## Testing
+* I would have liked to implement another form of testing in my app such as selenium to test the front end including links and buttons. In addition, the mock testing does not test the apps integration and functionality in a real-life environment. Despite this, I am happy with my less formal practice of the app's working functionality by running it and checking the website works as well as observing the container logs and service list. 
 # Acceptance Criteria
+## 4 services
+* I have created an app with four interactive services and a further fifth NGINX service. I believe I have met the criteria in this section as my first service hosts the interactive element of the app, using Jinja2 syntax to pass through a layout html for the webpages and it is the service responsible for triggering the other services into action. In addition, this service connects to a MySQL database which persists the created data in order for it to be retrieved on the website. Services 2 and 3 both create a random object as specified and service 4 creates an object based on the text responses received from services 2 and 3.
+## Different Implementations 
+* In my presentation I will demonstrate how the services can be altered without disrupting the user experience. This is achieved using Docker Swarm's replica functionality which will continue to host the service whilst each replica is being updated.
+## MoSCow
+* The MoSCow criteria I created at the start of my project is as follows:
+* Must have - 4 micro services, a database, 2 implementations
+* Should have - best practices
+* Could have - a nice front-end website
+* Won't have - a complex website
+* I feel I have met my must have, should have and could have criteria which ensure the functionability and quality of the project. The won't have criteria is an area that I have discussed above in my risk assessment and future improvements so I am happy that this criteria although not achieved currently, could be achieved in the future.
 # Authors
 Sophie Cosgrove
 # License
