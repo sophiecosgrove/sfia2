@@ -17,7 +17,7 @@
 * Containerisation: Docker
 * Orchestration Tool: Docker Swarm
 # Docker
-* Docker containers allow for easy packing, deploying and management of applications in a clean environment. Containers allow you to package up an app with everything it needs so that any other Linux user can download and distribute it easily. This ensures consistency in development, build, test, and production environments and promotes security as containers are completely segregated from one another. Docker also allows you to version control your images, including rollbacks if you encounter an error with the image. It reduces deployment times as a container images do not require an OS to be booted up. They are compatible with Google Cloud Services which is what I used to host my VMs and database. Storing the service images on Dockerhub means that they can be downloaded and utilised anywhere and by anyone which in a real-life setting would reduce the time taken to download and deploy the services whilst ensuring efficiency.
+* Docker containers allow for easy packing, deploying and management of applications in a clean environment. Containers allow you to package up an app with everything it needs so that any other Linux user can download and distribute it easily. This ensures consistency in development, build, test, and production environments and promotes security as containers are completely segregated from one another. Docker also allows you to version control your images, including rollbacks if you encounter an error with the image. It reduces deployment times as container images do not require an OS to be booted up. They are compatible with Google Cloud Services which is what I used to host my VMs and database. Storing the service images on Dockerhub means that they can be downloaded and utilised anywhere and by anyone which in a real-life setting would reduce the time taken to download and deploy the services whilst ensuring efficiency.
 # Ansible
 * Ansible is an automation tool that allows you to provision your machines with the set-up they need to run the software. It also assists in deployment and orchestration of software. 
 # Designs
@@ -52,7 +52,7 @@
 # Risk Assessment
 ![imageofinitialriskassessment](https://github.com/sophiecosgrove/sfia2/blob/development/images/initialriskassessment.png)
 ![imageofinitialriskmatrix](https://github.com/sophiecosgrove/sfia2/blob/development/images/initialriskmatrix.png)
-* My initial risk considerations were mainly theoretical as I had not got to grips with the concepts and technologies we would be using throughout the project. The allocated time for this project was shorted than previously experienced, so I was concerned this would pose a risk to the project being completed. However, some of the concepts I was already familiar with from the last project and there was not as much programming to do for the actual app but instead setting up the services which did not take too long. Therefore, the project was successfully completed on time. 
+* My initial risk considerations were mainly theoretical as I had not got to grips with the concepts and technologies we would be using throughout the project. The allocated time for this project was shorter than previously experienced, so I was concerned this would pose a risk to the project being completed. However, some of the concepts I was already familiar with from the last project and there was not as much programming to do for the actual app but instead setting up the services which did not take too long. Therefore, the project was successfully completed on time. 
 ![imageofongoingriskassessment](https://github.com/sophiecosgrove/sfia2/blob/development/images/ongoingriskassessment.png)
 ![imageofongoingriskmatrix](https://github.com/sophiecosgrove/sfia2/blob/development/images/ongoingriskmatrix.png)
 * In the on-going risk assessment, I logged some of the risks I faced when working on the project, incase they arose again and to document their effect on the project. The biggest problem I faced was with NGINX as the image was missing some important files needed for it to run properly, such as the conf.d directory and default.conf file. I had to download a stable image rather than the latest image from dockerhub. Another issue that arose was when setting up the ability for the manager to SSH into the other VMs to enable Ansible to work, it was important that I only allowed the connection from the IPs of my VMs on port 22 and not have it open to the internet. 
@@ -89,7 +89,7 @@
 
 # Future Improvements
 ## Fortune Aspect
-* As mentioned above, I believe that the user experience of the app could be improved by providing more specific fortunes and involving an interactive element. I would like to add comment and like functionality as this would provide elaboration on the fortunes recieved and some detail on if they were accurate to the individual. In addition, a customised fortune generation including forms to personalise the fortune or involving the time of access in the time aspect of the fortune would make the user experience more meaninful. Nonetheless, I do appreciate the simplicity of the app as it provides a simple and fast response. 
+* As mentioned above, I believe that the user experience of the app could be improved by providing more specific fortunes and involving an interactive element. I would like to add comment and like functionality as this would provide elaboration on the fortunes recieved and some detail on whether they were accurate to the individual. In addition, a customised fortune generation including forms to personalise the fortune or involving the time of access in the time aspect of the fortune would make the user experience more meaningful. Nonetheless, I do appreciate the simplicity of the app as it provides a simple and fast response. 
 ## Testing
 * I would have liked to implement another form of testing in my app such as selenium to test the front end including links and buttons. In addition, the mock testing does not test the apps integration and functionality in a real-life environment. Despite this, I am happy with my less formal practice of the app's working functionality by running it and checking the website works as well as observing the container logs and service list. 
 # Acceptance Criteria
@@ -103,7 +103,7 @@
 * Should have - best practices
 * Could have - a nice front-end website
 * Won't have - a complex website
-* I feel I have met my must have, should have and could have criteria which ensure the functionability and quality of the project. The won't have criteria is an area that I have discussed above in my risk assessment and future improvements so I am happy that this criteria although not achieved currently, could be achieved in the future.
+* I feel I have met my must have, should have and could have criteria which ensure the functionability and quality of the project. The won't have criteria is an area that I have discussed above in my risk assessment and future improvements so I am happy that this criteria, although not achieved currently, could be achieved in the future.
 # Authors
 Sophie Cosgrove
 # License
