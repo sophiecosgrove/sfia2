@@ -6,7 +6,7 @@ import os
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
-    response = requests.get('http://service4:5003/randomfortune')
+    response = requests.get('http://localhost:5003/randomfortune')
     sentence = response.text
     fortuneData = Fortunes(
         fortune = sentence
